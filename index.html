@@ -1,197 +1,464 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Pasión por el Gimnasio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
         }
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-        nav {
-            background-color: #444;
-            padding: 1rem;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-        section, article {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1rem auto;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        .progress {
+            height: 25px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Mi Pasión por el Gimnasio</h1>
-        <p>Descubre cómo el entrenamiento se convirtió en mi estilo de vida</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#rutinas">Rutinas</a></li>
-            <li><a href="#nutricion">Nutrición</a></li>
-            <li><a href="#consejos">Consejos</a></li>
-        </ul>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GymLife</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rutinas">Rutinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nutricion">Nutrición</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#consejos">Consejos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Recursos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#videos">Videos</a></li>
+                            <li><a class="dropdown-item" href="#calculadoras">Calculadoras fitness</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#usuarios">Usuarios registrados</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-success" type="button">Iniciar sesión</button>
+                </form>
+            </div>
+        </div>
     </nav>
 
-    <section id="inicio">
-        <h2>¿Por qué el gimnasio?</h2>
-            <img src="imagenes/gym.jpg" />
-        <p>El gimnasio se ha convertido en una parte fundamental de mi vida. No solo me ayuda a mantener una buena salud física, sino que también mejora mi bienestar mental y emocional.</p>
-    </section>
+    <header id="inicio" class="mb-5">
+        <div id="gymCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#gymCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#gymCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#gymCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagenes/gym.jpg" class="d-block w-100" alt="Gimnasio">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Mi Pasión por el Gimnasio</h1>
+                        <p>Descubre cómo el entrenamiento se convirtió en mi estilo de vida</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/ejercicios-perder-peso.jpg" class="d-block w-100" alt="Levantamiento de pesas">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Rutinas de entrenamiento</h2>
+                        <p>Entrena de manera efectiva con mis rutinas personalizadas</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/alimentacion.jpg" class="d-block w-100" alt="Nutrición fitness">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Nutrición adecuada</h2>
+                        <p>Aprende a alimentarte correctamente para maximizar tus resultados</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#gymCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gymCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </header>
 
-    <article id="rutinas">
-        <h2>Mis Rutinas de Entrenamiento</h2>
-        <ul>
-            <li>Lunes: Pecho, hombros y triceps
-                <ul>
-                    <li>Movimiento articular para calentar</li>
-                    <li>Press Inclinado</li>
-                    <li>Peck Deck</li>
-                    <li>Press Inclinado en maquina</li>
-                    <li>Press Frances</li>
-                    <li>Elevaciones laterales</li>
-                    <li>Elevaciones para hombro posterior</li>
-                    <li>Extension de tricep en polea</li>
-                </ul>
-            </li>
+    <div class="container">
+        <!-- Sección por qué el gimnasio -->
+        <section class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-4 mb-4">¿Por qué el gimnasio?</h2>
+                <p class="lead">El gimnasio se ha convertido en una parte fundamental de mi vida. No solo me ayuda a mantener una buena salud física, sino que también mejora mi bienestar mental y emocional.</p>
 
-            <li>Martes: Espalda y Bíceps</li>
-                <ul>
-                    <li>Movimiento Articular para calentar</li>
-                    <li>Jalon a el pecho </li>
-                    <li>Jalon a el pecho con agarre neutro</li>
-                    <li>Remo con mancuernas</li>
-                    <li>Encogimiento de hombros</li>
-                    <li>Curl de bicep</li>
-                    <li>Curl bayasian</li>
-                </ul>
+                <!-- Barra de progreso -->
+                <div class="my-5">
+                    <h4>Mi progreso físico</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Fuerza: 85%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-info" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">Resistencia: 70%</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Flexibilidad: 75%</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-danger" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Motivación: 90%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <li>Miercoles: Pierna</li>
-                <ul>
-                    <li>Movimiento articular para calentar</li> 
-                    <li>Curl femorar sentado</li>
-                    <li>Sentadilla libre</li>
-                    <li>Extension de cuadriceps</li>
-                    <li>Peso muerto con mancuernas</li>
-                    <li>Abductor</li>
-                    <li>Pantorilla</li>
-                </ul>
+        <!-- Sección rutinas -->
+        <section id="rutinas" class="row mb-5">
+            <div class="col-12">
+                <h2 class="display-4 mb-4 text-center">Mis Rutinas de Entrenamiento</h2>
+                
+                <div class="accordion" id="accordionRutinas">
+                    <!-- Lunes -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingLunes">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLunes" aria-expanded="true" aria-controls="collapseLunes">
+                                Lunes: Pecho, hombros y tríceps
+                            </button>
+                        </h2>
+                        <div id="collapseLunes" class="accordion-collapse collapse show" aria-labelledby="headingLunes" data-bs-parent="#accordionRutinas">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Movimiento articular para calentar</li>
+                                    <li class="list-group-item">Press Inclinado</li>
+                                    <li class="list-group-item">Peck Deck</li>
+                                    <li class="list-group-item">Press Inclinado en máquina</li>
+                                    <li class="list-group-item">Press Francés</li>
+                                    <li class="list-group-item">Elevaciones laterales</li>
+                                    <li class="list-group-item">Elevaciones para hombro posterior</li>
+                                    <li class="list-group-item">Extensión de trícep en polea</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Martes -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingMartes">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMartes" aria-expanded="false" aria-controls="collapseMartes">
+                                Martes: Espalda y Bíceps
+                            </button>
+                        </h2>
+                        <div id="collapseMartes" class="accordion-collapse collapse" aria-labelledby="headingMartes" data-bs-parent="#accordionRutinas">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Movimiento Articular para calentar</li>
+                                    <li class="list-group-item">Jalón a el pecho</li>
+                                    <li class="list-group-item">Jalón a el pecho con agarre neutro</li>
+                                    <li class="list-group-item">Remo con mancuernas</li>
+                                    <li class="list-group-item">Encogimiento de hombros</li>
+                                    <li class="list-group-item">Curl de bícep</li>
+                                    <li class="list-group-item">Curl bayasian</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Miércoles -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingMiercoles">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMiercoles" aria-expanded="false" aria-controls="collapseMiercoles">
+                                Miércoles: Pierna
+                            </button>
+                        </h2>
+                        <div id="collapseMiercoles" class="accordion-collapse collapse" aria-labelledby="headingMiercoles" data-bs-parent="#accordionRutinas">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Movimiento articular para calentar</li>
+                                    <li class="list-group-item">Curl femoral sentado</li>
+                                    <li class="list-group-item">Sentadilla libre</li>
+                                    <li class="list-group-item">Extensión de cuádriceps</li>
+                                    <li class="list-group-item">Peso muerto con mancuernas</li>
+                                    <li class="list-group-item">Abductor</li>
+                                    <li class="list-group-item">Pantorrilla</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Jueves -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingJueves">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseJueves" aria-expanded="false" aria-controls="collapseJueves">
+                                Jueves: Pecho y espalda
+                            </button>
+                        </h2>
+                        <div id="collapseJueves" class="accordion-collapse collapse" aria-labelledby="headingJueves" data-bs-parent="#accordionRutinas">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Movimiento articular para calentar</li>
+                                    <li class="list-group-item">Press Inclinado</li>
+                                    <li class="list-group-item">Peck Deck</li>
+                                    <li class="list-group-item">Press Inclinado en máquina</li>
+                                    <li class="list-group-item">Jalón a el pecho</li>
+                                    <li class="list-group-item">Remo giroda</li>
+                                    <li class="list-group-item">Remo con mancuernas</li>
+                                    <li class="list-group-item">Pull over</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Viernes -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingViernes">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseViernes" aria-expanded="false" aria-controls="collapseViernes">
+                                Viernes: Brazo completo
+                            </button>
+                        </h2>
+                        <div id="collapseViernes" class="accordion-collapse collapse" aria-labelledby="headingViernes" data-bs-parent="#accordionRutinas">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Movimiento Articular para calentar</li>
+                                    <li class="list-group-item">Vuelos laterales</li>
+                                    <li class="list-group-item">Press francés</li>
+                                    <li class="list-group-item">Press militar</li>
+                                    <li class="list-group-item">Vuelos para hombro posterior</li>
+                                    <li class="list-group-item">Extensión de trícep en polea</li>
+                                    <li class="list-group-item">Curl de bícep</li>
+                                    <li class="list-group-item">Curl bayasian</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sábado -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSabado">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSabado" aria-expanded="false" aria-controls="collapseSabado">
+                                Sábado: Pierna
+                            </button>
+                        </h2>
+                        <div id="collapseSabado" class="accordion-collapse collapse" aria-labelledby="headingSabado" data-bs-parent="#accordionRutinas">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Movimiento articular</li>
+                                    <li class="list-group-item">Hip thrust</li>
+                                    <li class="list-group-item">Curl femoral sentado</li>
+                                    <li class="list-group-item">Sentadilla libre</li>
+                                    <li class="list-group-item">Extensión de cuádriceps</li>
+                                    <li class="list-group-item">Peso muerto con mancuernas</li>
+                                    <li class="list-group-item">Abductor</li>
+                                    <li class="list-group-item">Pantorrilla</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <li>Jueves: Pecho y espalda
-                <ul>
-                    <li>Movimiento articular para calentar</li>
-                    <li>Press Inclinado </li>
-                    <li>Peck Deck </li>
-                    <li>Press Inclinado en maquina </li>
-                    <li>Jalon a el pecho </li>
-                    <li>Remo giroda</li>
-                    <li>Remo con mancuernas</li>
-                    <li>Pull over</li>
-                </ul>
-            </li>
+        <!-- Sección nutrición -->
+        <section id="nutricion" class="row mb-5">
+            <div class="col-md-6">
+                <h2 class="display-4 mb-4">Nutrición y Suplementación</h2>
+                <p class="lead">Una buena nutrición es fundamental para alcanzar los objetivos en el gimnasio. Aquí comparto mis consejos nutricionales más importantes.</p>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Márcate objetivos a corto plazo</li>
+                            <li class="list-group-item">No te prohíbas el darte algún gusto de vez en cuando con la comida</li>
+                            <li class="list-group-item">Comer menos, no significa que vas a bajar más rápido de peso</li>
+                            <li class="list-group-item">Cumple con todas tus comidas</li>
+                            <li class="list-group-item">Bebe mucha agua</li>
+                            <li class="list-group-item">Los suplementos no son necesarios. Son solo suplementos, sirven para complementar algo que te pudo hacer falta, si quiere tomarlos puedes hacerlo y si no, no hay ningún problema.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="imagenes/table-filled-with-large-variety-of-food-shot-from-royalty-free-image-1610967030_.avif" class="img-fluid rounded shadow-sm" alt="Alimentación saludable">
+            </div>
+        </section>
 
-            <li>Viernes: Brazo completo</li>
-                <ul>
-                    <li>Movimiento Articular para calentar</li>  
-                    <li>Vuelos laterales</li>
-                    <li>Press frances</li>
-                    <li>Press militar</li>
-                    <li>Vuelos para hombro posterior</li>
-                    <li>Extension de tricep en polea</li>
-                    <li>Curl de bicep</li>
-                    <li>Curl bayasian</li>
-                </ul>
+        <!-- Sección consejos -->
+        <section id="consejos" class="row mb-5">
+            <div class="col-12">
+                <h2 class="display-4 mb-4 text-center">Consejos para Principiantes</h2>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="bi bi-lightning-charge-fill text-warning"></i> Técnica</h5>
+                                <p class="card-text">Comienza con pesos ligeros y enfócate en la técnica correcta para prevenir lesiones.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="bi bi-calendar-check text-primary"></i> Constancia</h5>
+                                <p class="card-text">Mantén una rutina constante. Es más importante la disciplina que la motivación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="bi bi-battery-charging text-success"></i> Descanso</h5>
+                                <p class="card-text">Descansa adecuadamente entre sesiones. El músculo crece durante el descanso.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="bi bi-droplet-fill text-info"></i> Hidratación</h5>
+                                <p class="card-text">Hidrátate correctamente durante el entrenamiento para optimizar tu rendimiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="bi bi-trophy text-warning"></i> Objetivos</h5>
+                                <p class="card-text">Marca pequeños objetivos a corto plazo para mantener la motivación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><i class="bi bi-moon-stars-fill text-primary"></i> Sueño</h5>
+                                <p class="card-text">Duerme lo suficiente en la noche para una mejor recuperación muscular.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <li>Sabado: Pierna</li>
-                <ul>
-                    <li>Movimiento articular</li>
-                    <li>Hip thrust</li>
-                    <li>Curl femorar sentado</li>
-                    <li>Sentadilla libre</li>
-                    <li>Extension de cuadriceps</li>
-                    <li>Peso muerto con mancuernas</li>
-                    <li>Abductor</li>
-                    <li>Pantorilla</li>
-                </ul>
-        </ul>
-    </article>
+        <!-- Sección videos -->
+        <section id="videos" class="row mb-5">
+            <div class="col-12 text-center">
+                <h2 class="display-4 mb-4">Videos de entrenamiento</h2>
+                
+                <div class="ratio ratio-16x9">
+                    <video src="videos/gym.mp4" controls></video>
+                </div>
+            </div>
+        </section>
 
-    <section id="nutricion">
-        <h2>Nutrición y Suplementación</h2>
-        <img src="imagenes/alimentacion.jpg" />
-        <p>Una buena nutrición es fundamental para alcanzar los objetivos en el gimnasio. Aquí comparto mis consejos nutricionales más importantes.</p>
-        <ul>
-            <ul>
-                <li>Marcate objetivos a corto plazo</li>
-                <li>No te prohibas el darte algun gusto debes en cuando con la comida</li>
-                <li>Comer menos, no significa que vas a bajar mas rapido de peso</li>
-                <li>Cumple con todas tus comidas</li>
-                <li>Bebe mucha agua</li>
-                <li>Los suplementos no son necesarios. Son solo suplementos, sirven para complementar algo que te pudo hacer falta, si quiere tomarlos puedes hacerlo y si no, no hay ningun problema.</li>
-            </ul>
-        </ul>
+        <!-- Tabla de usuarios registrados -->
+        <section id="usuarios" class="row mb-5">
+            <div class="col-12">
+                <h2 class="display-4 mb-4 text-center">Usuarios Registrados</h2>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID de usuario</th>
+                                <th>Nombre completo</th>
+                                <th>Rol</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Juan Pérez</td>
+                                <td>Administrador</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>María Rodríguez</td>
+                                <td>Entrenador</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Carlos López</td>
+                                <td>Usuario</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>Ana Gómez</td>
+                                <td>Usuario</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>005</td>
+                                <td>Roberto Sánchez</td>
+                                <td>Entrenador</td>
+                                <td>
+                                    <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i> Ver</button>
+                                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Editar</button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    </section>
-
-    <article id="consejos">
-        <h2>Consejos para Principiantes</h2>
-        <ul>
-            <li>Comienza con pesos ligeros y enfócate en la técnica</li>
-            <li>Mantén una rutina constante</li>
-            <li>Descansa adecuadamente entre sesiones</li>
-            <li>Hidrátate correctamente durante el entrenamiento</li>
-            <li>Marca pequeños objetivos a corto plazo</li>
-            <li>Es mas importante la disciplina que la motivacion</li>
-            <li>Duerme lo suficiente en la noche</li>
-        </ul>
-    </article>
-
-    <section>
-        <video src="videos/gym.mp4" width="600" height="800" autoplay></video>
-    </section>
-    <footer>
-        <p>Creado por Nicolas Vargas Rojas - 2025</p>
-        <p>Contacto: juan.vargas.r@uniautonoma.edu.co</p>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Mi Pasión por el Gimnasio</h5>
+                    <p>Creado por Nicolás Vargas Rojas - 2025</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Contacto</h5>
+                    <p>
+                        <a href="mailto:juan.vargas.r@uniautonoma.edu.co" class="text-white">juan.vargas.r@uniautonoma.edu.co</a>
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
